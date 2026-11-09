@@ -1,0 +1,21 @@
+# dependencies & build output
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+
+# environment files — real credentials never leave this machine
+.env
+.env.*
+!.env.example
+
+# keys & certificates
+*.pem
+*.key
+
+# logs & OS files
+npm-debug.log*
+.DS_Store
+Thumbs.db
