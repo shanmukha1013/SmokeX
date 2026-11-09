@@ -4,7 +4,11 @@ export const site = {
   title: "SMOKE X — Turning Ideas Into Products.",
   description:
     "Explore SMOKE X, the personal technology ecosystem of Marella Shanmukha Reddy, featuring software products, AI engineering, innovation and digital experiences.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://smokex.vercel.app").replace(/\/$/, ""),
+  // canonical URL: explicit setting first, then Vercel's production domain (a system variable set at build time)
+  url: (
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://smokex.vercel.app")
+  ).replace(/\/$/, ""),
   owner: {
     name: "Marella Shanmukha Reddy",
     short: "MSR",
